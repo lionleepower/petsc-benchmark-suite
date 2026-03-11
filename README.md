@@ -160,6 +160,7 @@ Typical process counts:
 - 16
 - 32
 - 64
+- 128
 
 Main outputs:
 
@@ -172,10 +173,9 @@ Main outputs:
 Compare pure MPI and hybrid execution under a fixed total core budget.
 
 Typical configurations:
-- MPI=128, OMP=1
-- MPI=64, OMP=2
-- MPI=32, OMP=4
-- MPI=16, OMP=8
+- MPI=[1, 2, 4 , 8, 16, 32, 64 ,128] 
+- OMP=[1, 2, 4, 8, 16 , 32, 64, 128]
+
 
 Main outputs:
 - runtime comparison
