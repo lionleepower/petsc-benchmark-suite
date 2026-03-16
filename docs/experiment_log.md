@@ -51,7 +51,25 @@ No benchmark results yet.
 Repository structure is now ready for running the first benchmark experiments.
 
 
+---
+## Experiment 002 – Benchmark Scripts Added
 
+Date
+2026-03-11
+
+Objective
+Organise existing benchmark scripts into repository.
+
+Actions
+- added MPI benchmark Slurm scripts
+- added ARCHER2 environment configuration
+- prepared repository for scaling experiments
+
+Observations
+Scripts previously used for experiments are now integrated into the repository structure.
+
+Next Steps
+Run new scaling experiments using the organised workflow.
 
 ---
 

@@ -42,7 +42,13 @@ The main goals of this project are:
 
 ## Target Workload
 
-The current benchmark focus is PETSc example workloads such as `ex2`, used as a compact but realistic scientific computing test case.
+This project benchmarks the PETSc tutorial example `ex2`.
+
+Source code for the example can be found in the official PETSc repository:
+
+https://gitlab.com/petsc/petsc/-/blob/release/src/ksp/ksp/tutorials/ex2.c
+
+The code is not included in this repository. Instead, the benchmark scripts assume a PETSc installation on the target HPC system.
 
 The benchmark pipeline includes:
 
