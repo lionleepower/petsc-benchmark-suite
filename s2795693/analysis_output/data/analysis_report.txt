@@ -1,0 +1,22 @@
+Dataset: hybrid
+------------------------------------------------------------
+p=  1 | r=  1 | t=  1 | time=101.3 | speedup=1 | eff=1 | iters=4311.0
+p=  2 | r=  2 | t=  1 | time=51.44 | speedup=1.96928 | eff=0.984642 | iters=3537.0
+p=  4 | r=  4 | t=  1 | time=20.89 | speedup=4.84921 | eff=1.2123 | iters=2062.0
+p=  8 | r=  4 | t=  2 | time=17.83 | speedup=5.68144 | eff=0.710179 | iters=2062.0
+p= 16 | r=  4 | t=  4 | time=15.38 | speedup=6.58648 | eff=0.411655 | iters=2062.0
+p= 32 | r= 32 | t=  1 | time=8.101 | speedup=12.5046 | eff=0.39077 | iters=4173.0
+p= 64 | r= 64 | t=  1 | time=2.471 | speedup=40.9955 | eff=0.640555 | iters=5150.0
+p=128 | r=128 | t=  1 | time=1.729 | speedup=58.5888 | eff=0.457725 | iters=6567.0
+
+Dataset: mpi_only
+------------------------------------------------------------
+p=  1 | r=  1 | t=  1 | time=154.3 | speedup=1 | eff=1 | iters=4311.0
+p=  2 | r=  2 | t=  1 | time=68.04 | speedup=2.26778 | eff=1.13389 | iters=3537.0
+p=  4 | r=  4 | t=  1 | time=25.18 | speedup=6.12788 | eff=1.53197 | iters=2062.0
+p=  8 | r=  8 | t=  1 | time=41.93 | speedup=3.67994 | eff=0.459993 | iters=4918.0
+p= 16 | r= 16 | t=  1 | time=20.14 | speedup=7.66137 | eff=0.478836 | iters=5052.0
+p= 32 | r= 32 | t=  1 | time=8.656 | speedup=17.8258 | eff=0.557056 | iters=4173.0
+p= 64 | r= 64 | t=  1 | time=3.138 | speedup=49.1714 | eff=0.768304 | iters=5150.0
+p=128 | r=128 | t=  1 | time=2.15 | speedup=71.7674 | eff=0.560683 | iters=6567.0
+

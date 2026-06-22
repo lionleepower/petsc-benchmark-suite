@@ -1,0 +1,24 @@
+cd $PETSC_DIR
+
+
+./configure \
+  --PETSC_ARCH=$PETSC_ARCH \
+  --with-debugging=0 \
+  COPTFLAGS="-O3" CXXOPTFLAGS="-O3" FOPTFLAGS="-O3" \
+  --with-cc=cc --with-cxx=CC --with-fc=ftn \
+  --with-openmp=1 \
+  --with-openmp-kernels=1 \
+  --download-fblaslapack
+
+
+make -j 8 all
+  --download-fblaslapack
+
+
+make -j 8 all
+
+
+<<<<<<< scripts/config.txt
+make -j 8 all
+
+

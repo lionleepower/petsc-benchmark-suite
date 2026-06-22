@@ -1,0 +1,8 @@
+timestamp,jobid,nodelist,nodes,scale,m,n,unknowns,ranks,threads,total_cores,rep,time_sec,iterations,error_norm,logfile
+2026-06-09T16:30:08+01:00,13997044,nid005303,1,medium,3160,3160,9985600,1,1,1,1,3.690e+03,10000,error,/work/m25oc/m25oc/s2795693/petsc_omp/runs/size_grid/medium/ex2_arch-omp-opt_medium_r1_t1_p1_m3160_n3160_job13997044_rep1.log
+2026-06-09T17:27:53+01:00,13997044,nid005303,1,medium,3160,3160,9985600,1,2,2,1,3.463e+03,10000,error,/work/m25oc/m25oc/s2795693/petsc_omp/runs/size_grid/medium/ex2_arch-omp-opt_medium_r1_t2_p2_m3160_n3160_job13997044_rep1.log
+2026-06-09T18:25:55+01:00,13997044,nid005303,1,medium,3160,3160,9985600,1,4,4,1,3.481e+03,10000,error,/work/m25oc/m25oc/s2795693/petsc_omp/runs/size_grid/medium/ex2_arch-omp-opt_medium_r1_t4_p4_m3160_n3160_job13997044_rep1.log
+2026-06-09T19:24:38+01:00,13997044,nid005303,1,medium,3160,3160,9985600,1,8,8,1,3.522e+03,10000,error,/work/m25oc/m25oc/s2795693/petsc_omp/runs/size_grid/medium/ex2_arch-omp-opt_medium_r1_t8_p8_m3160_n3160_job13997044_rep1.log
+2026-06-09T20:02:11+01:00,13997044,nid005303,1,medium,3160,3160,9985600,2,1,2,1,2.253e+03,10000,error,/work/m25oc/m25oc/s2795693/petsc_omp/runs/size_grid/medium/ex2_arch-omp-opt_medium_r2_t1_p2_m3160_n3160_job13997044_rep1.log
+2026-06-09T20:39:44+01:00,13997044,nid005303,1,medium,3160,3160,9985600,2,2,4,1,2.252e+03,10000,error,/work/m25oc/m25oc/s2795693/petsc_omp/runs/size_grid/medium/ex2_arch-omp-opt_medium_r2_t2_p4_m3160_n3160_job13997044_rep1.log
+2026-06-09T21:17:38+01:00,13997044,nid005303,1,medium,3160,3160,9985600,2,4,8,1,2.273e+03,10000,error,/work/m25oc/m25oc/s2795693/petsc_omp/runs/size_grid/medium/ex2_arch-omp-opt_medium_r2_t4_p8_m3160_n3160_job13997044_rep1.log

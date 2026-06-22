@@ -1,0 +1,16 @@
+.DS_Store
+.vscode/
+
+# Local backup of the broken nested Git directory removed from s2795693.
+.git.invalid-submodule-backup/
+
+# LaTeX build intermediates; keep source .tex, figures, and PDFs.
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.run.xml
+*.synctex.gz

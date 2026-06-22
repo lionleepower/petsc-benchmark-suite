@@ -1,0 +1,6 @@
+scale,m,n,unknowns,nodes,ppn,threads,mpi_ranks,total_cores,unknowns_per_core,runtime_seconds,estimated_CU,source_file
+small,1000,1000,1000000,1,128,1,128,128,7812.5,3.844,0.00106778,runs/size_grid/size_grid_ex2_arch-omp-opt_job13997004.csv
+medium-small,2240,2240,5017600,1,128,1,128,128,39200,64.02,0.0177833,runs/size_grid/size_grid_ex2_arch-omp-opt_job13997039.csv
+medium,3160,3160,9985600,1,128,1,128,128,78012.5,136.5,0.0379167,runs/size_grid/size_grid_ex2_arch-omp-opt_job14009503.csv
+large,4500,4500,20250000,1,128,1,128,128,158203,340.1,0.0944722,runs/size_grid/size_grid_ex2_arch-omp-opt_job13998779.csv
+very-large,6400,6400,40960000,1,128,1,128,128,320000,846.9,0.23525,runs/size_grid/size_grid_ex2_arch-omp-opt_job14009694.csv
