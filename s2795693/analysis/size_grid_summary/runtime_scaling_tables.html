@@ -1,0 +1,1921 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Runtime Scaling Tables</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="runtime_scaling_tables_pdf.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Runtime Scaling Tables</h1>
+</header>
+<h1 id="table-1-runtime-scaling-tables-by-problem-size">Table 1: Runtime Scaling Tables by Problem Size</h1>
+<p>Source data: <code>runtime_results.csv</code>.</p>
+<p>Rows are aggregated from raw runs using the grouping fields <code>scale</code>, <code>m</code>, <code>n</code>, <code>unknowns</code>, <code>nodes</code>, <code>ppn</code>, <code>threads</code>, <code>mpi_ranks</code>, <code>total_cores</code>, <code>unknowns_per_core</code>, and <code>matrix_type</code>.</p>
+<p><code>speedup = baseline runtime / runtime mean</code>,</p>
+<p><code>efficiency = speedup / total cores</code>. <code>CUs = nodes × runtime mean / 3600</code></p>
+<h2 id="problem-size-overview">Problem Size Overview</h2>
+<table>
+<thead>
+<tr class="header">
+<th>scale</th>
+<th>m</th>
+<th>n</th>
+<th>unknowns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>small</td>
+<td>1,000</td>
+<td>1,000</td>
+<td>1,000,000</td>
+</tr>
+<tr class="even">
+<td>medium-small</td>
+<td>2,240</td>
+<td>2,240</td>
+<td>5,017,600</td>
+</tr>
+<tr class="odd">
+<td>medium</td>
+<td>3,160</td>
+<td>3,160</td>
+<td>9,985,600</td>
+</tr>
+<tr class="even">
+<td>large</td>
+<td>4,500</td>
+<td>4,500</td>
+<td>20,250,000</td>
+</tr>
+<tr class="odd">
+<td>very-large</td>
+<td>6,400</td>
+<td>6,400</td>
+<td>40,960,000</td>
+</tr>
+</tbody>
+</table>
+<h2 id="table-1a.-runtime-scaling-for-small-problem-size">Table 1a. Runtime scaling for small problem size</h2>
+<p>scale: <code>small</code></p>
+<p>problem size: 1,000 × 1,000</p>
+<p>unknowns: 1,000,000</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>total cores</th>
+<th>nodes</th>
+<th>ppn</th>
+<th>MPI ranks</th>
+<th>threads</th>
+<th>unknowns/core</th>
+<th>runtime mean/s</th>
+<th>speedup</th>
+<th>efficiency</th>
+<th>CUs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1,000,000</td>
+<td>246.85</td>
+<td>1.00</td>
+<td>100.0%</td>
+<td>0.0686</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>500,000</td>
+<td>230.50</td>
+<td>1.07</td>
+<td>53.5%</td>
+<td>0.0640</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>500,000</td>
+<td>83.81</td>
+<td>2.95</td>
+<td>147.3%</td>
+<td>0.0233</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>4</td>
+<td>250,000</td>
+<td>228.10</td>
+<td>1.08</td>
+<td>27.1%</td>
+<td>0.0634</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>250,000</td>
+<td>78.84</td>
+<td>3.13</td>
+<td>78.3%</td>
+<td>0.0219</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>1</td>
+<td>250,000</td>
+<td>49.26</td>
+<td>5.01</td>
+<td>125.3%</td>
+<td>0.0137</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>8</td>
+<td>125,000</td>
+<td>225.95</td>
+<td>1.09</td>
+<td>13.7%</td>
+<td>0.0628</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>125,000</td>
+<td>73.93</td>
+<td>3.34</td>
+<td>41.7%</td>
+<td>0.0205</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>2</td>
+<td>125,000</td>
+<td>43.36</td>
+<td>5.69</td>
+<td>71.2%</td>
+<td>0.0120</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>1</td>
+<td>125,000</td>
+<td>60.17</td>
+<td>4.10</td>
+<td>51.3%</td>
+<td>0.0167</td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>16</td>
+<td>62,500</td>
+<td>215.40</td>
+<td>1.15</td>
+<td>7.2%</td>
+<td>0.0598</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>8</td>
+<td>62,500</td>
+<td>70.30</td>
+<td>3.51</td>
+<td>21.9%</td>
+<td>0.0195</td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>62,500</td>
+<td>30.56</td>
+<td>8.08</td>
+<td>50.5%</td>
+<td>0.0085</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>2</td>
+<td>62,500</td>
+<td>35.64</td>
+<td>6.93</td>
+<td>43.3%</td>
+<td>0.0099</td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td>1</td>
+<td>16</td>
+<td>16</td>
+<td>1</td>
+<td>62,500</td>
+<td>85.47</td>
+<td>2.89</td>
+<td>18.1%</td>
+<td>0.0237</td>
+</tr>
+<tr class="even">
+<td>32</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>32</td>
+<td>31,250</td>
+<td>216.50</td>
+<td>1.14</td>
+<td>3.6%</td>
+<td>0.0601</td>
+</tr>
+<tr class="odd">
+<td>32</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>16</td>
+<td>31,250</td>
+<td>58.24</td>
+<td>4.24</td>
+<td>13.2%</td>
+<td>0.0162</td>
+</tr>
+<tr class="even">
+<td>32</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>8</td>
+<td>31,250</td>
+<td>25.89</td>
+<td>9.53</td>
+<td>29.8%</td>
+<td>0.0072</td>
+</tr>
+<tr class="odd">
+<td>32</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>4</td>
+<td>31,250</td>
+<td>23.16</td>
+<td>10.66</td>
+<td>33.3%</td>
+<td>0.0064</td>
+</tr>
+<tr class="even">
+<td>32</td>
+<td>1</td>
+<td>16</td>
+<td>16</td>
+<td>2</td>
+<td>31,250</td>
+<td>38.65</td>
+<td>6.39</td>
+<td>20.0%</td>
+<td>0.0107</td>
+</tr>
+<tr class="odd">
+<td>32</td>
+<td>1</td>
+<td>32</td>
+<td>32</td>
+<td>1</td>
+<td>31,250</td>
+<td>29.80</td>
+<td>8.28</td>
+<td>25.9%</td>
+<td>0.0083</td>
+</tr>
+<tr class="even">
+<td>64</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>64</td>
+<td>15,625</td>
+<td>195.60</td>
+<td>1.26</td>
+<td>2.0%</td>
+<td>0.0543</td>
+</tr>
+<tr class="odd">
+<td>64</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>32</td>
+<td>15,625</td>
+<td>54.11</td>
+<td>4.56</td>
+<td>7.1%</td>
+<td>0.0150</td>
+</tr>
+<tr class="even">
+<td>64</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>16</td>
+<td>15,625</td>
+<td>20.76</td>
+<td>11.89</td>
+<td>18.6%</td>
+<td>0.0058</td>
+</tr>
+<tr class="odd">
+<td>64</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>15,625</td>
+<td>16.35</td>
+<td>15.10</td>
+<td>23.6%</td>
+<td>0.0045</td>
+</tr>
+<tr class="even">
+<td>64</td>
+<td>1</td>
+<td>16</td>
+<td>16</td>
+<td>4</td>
+<td>15,625</td>
+<td>17.23</td>
+<td>14.33</td>
+<td>22.4%</td>
+<td>0.0048</td>
+</tr>
+<tr class="odd">
+<td>64</td>
+<td>1</td>
+<td>32</td>
+<td>32</td>
+<td>2</td>
+<td>15,625</td>
+<td>9.26</td>
+<td>26.66</td>
+<td>41.7%</td>
+<td>0.0026</td>
+</tr>
+<tr class="even">
+<td>64</td>
+<td>1</td>
+<td>64</td>
+<td>64</td>
+<td>1</td>
+<td>15,625</td>
+<td>8.14</td>
+<td>30.33</td>
+<td>47.4%</td>
+<td>0.0023</td>
+</tr>
+<tr class="odd">
+<td>128</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>128</td>
+<td>7,812</td>
+<td>208.40</td>
+<td>1.18</td>
+<td>0.9%</td>
+<td>0.0579</td>
+</tr>
+<tr class="even">
+<td>128</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>64</td>
+<td>7,812</td>
+<td>53.57</td>
+<td>4.61</td>
+<td>3.6%</td>
+<td>0.0149</td>
+</tr>
+<tr class="odd">
+<td>128</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>32</td>
+<td>7,812</td>
+<td>20.45</td>
+<td>12.07</td>
+<td>9.4%</td>
+<td>0.0057</td>
+</tr>
+<tr class="even">
+<td>128</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>16</td>
+<td>7,812</td>
+<td>14.99</td>
+<td>16.47</td>
+<td>12.9%</td>
+<td>0.0042</td>
+</tr>
+<tr class="odd">
+<td>128</td>
+<td>1</td>
+<td>16</td>
+<td>16</td>
+<td>8</td>
+<td>7,812</td>
+<td>15.46</td>
+<td>15.97</td>
+<td>12.5%</td>
+<td>0.0043</td>
+</tr>
+<tr class="even">
+<td>128</td>
+<td>1</td>
+<td>32</td>
+<td>32</td>
+<td>4</td>
+<td>7,812</td>
+<td>6.40</td>
+<td>38.58</td>
+<td>30.1%</td>
+<td>0.0018</td>
+</tr>
+<tr class="odd">
+<td>128</td>
+<td>1</td>
+<td>64</td>
+<td>64</td>
+<td>2</td>
+<td>7,812</td>
+<td>4.37</td>
+<td>56.46</td>
+<td>44.1%</td>
+<td>0.0012</td>
+</tr>
+<tr class="even">
+<td>128</td>
+<td>1</td>
+<td>128</td>
+<td>128</td>
+<td>1</td>
+<td>7,812</td>
+<td>3.85</td>
+<td>64.03</td>
+<td>50.0%</td>
+<td>0.0011</td>
+</tr>
+</tbody>
+</table>
+<h2 id="table-1b.-runtime-scaling-for-medium-small-problem-size">Table 1b. Runtime scaling for medium-small problem size</h2>
+<p>scale: <code>medium-small</code></p>
+<p>problem size: 2,240 × 2,240</p>
+<p>unknowns: 5,017,600</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>total cores</th>
+<th>nodes</th>
+<th>ppn</th>
+<th>MPI ranks</th>
+<th>threads</th>
+<th>unknowns/core</th>
+<th>runtime mean/s</th>
+<th>speedup</th>
+<th>efficiency</th>
+<th>CUs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>5,017,600</td>
+<td>1,874.00</td>
+<td>1.00</td>
+<td>100.0%</td>
+<td>0.5206</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>2,508,800</td>
+<td>1,742.00</td>
+<td>1.08</td>
+<td>53.8%</td>
+<td>0.4839</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>2,508,800</td>
+<td>1,136.00</td>
+<td>1.65</td>
+<td>82.5%</td>
+<td>0.3156</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>4</td>
+<td>1,254,400</td>
+<td>1,747.00</td>
+<td>1.07</td>
+<td>26.8%</td>
+<td>0.4853</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>1,254,400</td>
+<td>1,135.00</td>
+<td>1.65</td>
+<td>41.3%</td>
+<td>0.3153</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>1</td>
+<td>1,254,400</td>
+<td>1,052.00</td>
+<td>1.78</td>
+<td>44.5%</td>
+<td>0.2922</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>8</td>
+<td>627,200</td>
+<td>1,767.00</td>
+<td>1.06</td>
+<td>13.3%</td>
+<td>0.4908</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>627,200</td>
+<td>1,148.00</td>
+<td>1.63</td>
+<td>20.4%</td>
+<td>0.3189</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>2</td>
+<td>627,200</td>
+<td>1,053.00</td>
+<td>1.78</td>
+<td>22.2%</td>
+<td>0.2925</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>1</td>
+<td>627,200</td>
+<td>1,067.00</td>
+<td>1.76</td>
+<td>22.0%</td>
+<td>0.2964</td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>8</td>
+<td>313,600</td>
+<td>1,084.00</td>
+<td>1.73</td>
+<td>10.8%</td>
+<td>0.3011</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>313,600</td>
+<td>828.80</td>
+<td>2.26</td>
+<td>14.1%</td>
+<td>0.2302</td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>2</td>
+<td>313,600</td>
+<td>817.30</td>
+<td>2.29</td>
+<td>14.3%</td>
+<td>0.2270</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>1</td>
+<td>16</td>
+<td>16</td>
+<td>1</td>
+<td>313,600</td>
+<td>810.10</td>
+<td>2.31</td>
+<td>14.5%</td>
+<td>0.2250</td>
+</tr>
+<tr class="odd">
+<td>32</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>8</td>
+<td>156,800</td>
+<td>531.90</td>
+<td>3.52</td>
+<td>11.0%</td>
+<td>0.1477</td>
+</tr>
+<tr class="even">
+<td>32</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>4</td>
+<td>156,800</td>
+<td>365.30</td>
+<td>5.13</td>
+<td>16.0%</td>
+<td>0.1015</td>
+</tr>
+<tr class="odd">
+<td>32</td>
+<td>1</td>
+<td>16</td>
+<td>16</td>
+<td>2</td>
+<td>156,800</td>
+<td>332.40</td>
+<td>5.64</td>
+<td>17.6%</td>
+<td>0.0923</td>
+</tr>
+<tr class="even">
+<td>32</td>
+<td>1</td>
+<td>32</td>
+<td>32</td>
+<td>1</td>
+<td>156,800</td>
+<td>330.30</td>
+<td>5.67</td>
+<td>17.7%</td>
+<td>0.0917</td>
+</tr>
+<tr class="odd">
+<td>64</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>78,400</td>
+<td>242.70</td>
+<td>7.72</td>
+<td>12.1%</td>
+<td>0.0674</td>
+</tr>
+<tr class="even">
+<td>64</td>
+<td>1</td>
+<td>16</td>
+<td>16</td>
+<td>4</td>
+<td>78,400</td>
+<td>156.30</td>
+<td>11.99</td>
+<td>18.7%</td>
+<td>0.0434</td>
+</tr>
+<tr class="odd">
+<td>64</td>
+<td>1</td>
+<td>32</td>
+<td>32</td>
+<td>2</td>
+<td>78,400</td>
+<td>135.40</td>
+<td>13.84</td>
+<td>21.6%</td>
+<td>0.0376</td>
+</tr>
+<tr class="even">
+<td>64</td>
+<td>1</td>
+<td>64</td>
+<td>64</td>
+<td>1</td>
+<td>78,400</td>
+<td>135.30</td>
+<td>13.85</td>
+<td>21.6%</td>
+<td>0.0376</td>
+</tr>
+<tr class="odd">
+<td>128</td>
+<td>1</td>
+<td>16</td>
+<td>16</td>
+<td>8</td>
+<td>39,200</td>
+<td>118.90</td>
+<td>15.76</td>
+<td>12.3%</td>
+<td>0.0330</td>
+</tr>
+<tr class="even">
+<td>128</td>
+<td>1</td>
+<td>32</td>
+<td>32</td>
+<td>4</td>
+<td>39,200</td>
+<td>76.01</td>
+<td>24.65</td>
+<td>19.3%</td>
+<td>0.0211</td>
+</tr>
+<tr class="odd">
+<td>128</td>
+<td>1</td>
+<td>64</td>
+<td>64</td>
+<td>2</td>
+<td>39,200</td>
+<td>64.76</td>
+<td>28.94</td>
+<td>22.6%</td>
+<td>0.0180</td>
+</tr>
+<tr class="even">
+<td>128</td>
+<td>1</td>
+<td>128</td>
+<td>128</td>
+<td>1</td>
+<td>39,200</td>
+<td>64.02</td>
+<td>29.27</td>
+<td>22.9%</td>
+<td>0.0178</td>
+</tr>
+</tbody>
+</table>
+<h2 id="table-1c.-runtime-scaling-for-medium-problem-size">Table 1c. Runtime scaling for medium problem size</h2>
+<p>scale: <code>medium</code></p>
+<p>problem size: 3,160 × 3,160</p>
+<p>unknowns: 9,985,600</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>total cores</th>
+<th>nodes</th>
+<th>ppn</th>
+<th>MPI ranks</th>
+<th>threads</th>
+<th>unknowns/core</th>
+<th>runtime mean/s</th>
+<th>speedup</th>
+<th>efficiency</th>
+<th>CUs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>9,985,600</td>
+<td>3,709.50</td>
+<td>1.00</td>
+<td>100.0%</td>
+<td>1.0304</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>4,992,800</td>
+<td>3,462.00</td>
+<td>1.07</td>
+<td>53.6%</td>
+<td>0.9617</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>4,992,800</td>
+<td>2,237.00</td>
+<td>1.66</td>
+<td>82.9%</td>
+<td>0.6214</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>4</td>
+<td>2,496,400</td>
+<td>3,477.00</td>
+<td>1.07</td>
+<td>26.7%</td>
+<td>0.9658</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2,496,400</td>
+<td>2,243.50</td>
+<td>1.65</td>
+<td>41.3%</td>
+<td>0.6232</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>1</td>
+<td>2,496,400</td>
+<td>2,064.00</td>
+<td>1.80</td>
+<td>44.9%</td>
+<td>0.5733</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>8</td>
+<td>1,248,200</td>
+<td>3,466.00</td>
+<td>1.07</td>
+<td>13.4%</td>
+<td>0.9628</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>1,248,200</td>
+<td>2,275.00</td>
+<td>1.63</td>
+<td>20.4%</td>
+<td>0.6319</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>2</td>
+<td>1,248,200</td>
+<td>2,068.00</td>
+<td>1.79</td>
+<td>22.4%</td>
+<td>0.5744</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>1</td>
+<td>1,248,200</td>
+<td>2,145.00</td>
+<td>1.73</td>
+<td>21.6%</td>
+<td>0.5958</td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>8</td>
+<td>624,100</td>
+<td>2,155.00</td>
+<td>1.72</td>
+<td>10.8%</td>
+<td>0.5986</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>624,100</td>
+<td>1,763.00</td>
+<td>2.10</td>
+<td>13.2%</td>
+<td>0.4897</td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>2</td>
+<td>624,100</td>
+<td>1,797.00</td>
+<td>2.06</td>
+<td>12.9%</td>
+<td>0.4992</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>1</td>
+<td>16</td>
+<td>16</td>
+<td>1</td>
+<td>624,100</td>
+<td>1,838.00</td>
+<td>2.02</td>
+<td>12.6%</td>
+<td>0.5106</td>
+</tr>
+<tr class="odd">
+<td>32</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>8</td>
+<td>312,050</td>
+<td>1,090.00</td>
+<td>3.40</td>
+<td>10.6%</td>
+<td>0.3028</td>
+</tr>
+<tr class="even">
+<td>32</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>4</td>
+<td>312,050</td>
+<td>824.10</td>
+<td>4.50</td>
+<td>14.1%</td>
+<td>0.2289</td>
+</tr>
+<tr class="odd">
+<td>32</td>
+<td>1</td>
+<td>16</td>
+<td>16</td>
+<td>2</td>
+<td>312,050</td>
+<td>809.70</td>
+<td>4.58</td>
+<td>14.3%</td>
+<td>0.2249</td>
+</tr>
+<tr class="even">
+<td>32</td>
+<td>1</td>
+<td>32</td>
+<td>32</td>
+<td>1</td>
+<td>312,050</td>
+<td>804.00</td>
+<td>4.61</td>
+<td>14.4%</td>
+<td>0.2233</td>
+</tr>
+<tr class="odd">
+<td>64</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>156,025</td>
+<td>530.80</td>
+<td>6.99</td>
+<td>10.9%</td>
+<td>0.1474</td>
+</tr>
+<tr class="even">
+<td>64</td>
+<td>1</td>
+<td>16</td>
+<td>16</td>
+<td>4</td>
+<td>156,025</td>
+<td>366.20</td>
+<td>10.13</td>
+<td>15.8%</td>
+<td>0.1017</td>
+</tr>
+<tr class="odd">
+<td>64</td>
+<td>1</td>
+<td>32</td>
+<td>32</td>
+<td>2</td>
+<td>156,025</td>
+<td>331.90</td>
+<td>11.18</td>
+<td>17.5%</td>
+<td>0.0922</td>
+</tr>
+<tr class="even">
+<td>64</td>
+<td>1</td>
+<td>64</td>
+<td>64</td>
+<td>1</td>
+<td>156,025</td>
+<td>329.70</td>
+<td>11.25</td>
+<td>17.6%</td>
+<td>0.0916</td>
+</tr>
+<tr class="odd">
+<td>128</td>
+<td>1</td>
+<td>16</td>
+<td>16</td>
+<td>8</td>
+<td>78,012</td>
+<td>243.10</td>
+<td>15.26</td>
+<td>11.9%</td>
+<td>0.0675</td>
+</tr>
+<tr class="even">
+<td>128</td>
+<td>1</td>
+<td>32</td>
+<td>32</td>
+<td>4</td>
+<td>78,012</td>
+<td>157.40</td>
+<td>23.57</td>
+<td>18.4%</td>
+<td>0.0437</td>
+</tr>
+<tr class="odd">
+<td>128</td>
+<td>1</td>
+<td>64</td>
+<td>64</td>
+<td>2</td>
+<td>78,012</td>
+<td>136.70</td>
+<td>27.14</td>
+<td>21.2%</td>
+<td>0.0380</td>
+</tr>
+<tr class="even">
+<td>128</td>
+<td>1</td>
+<td>128</td>
+<td>128</td>
+<td>1</td>
+<td>78,012</td>
+<td>136.50</td>
+<td>27.18</td>
+<td>21.2%</td>
+<td>0.0379</td>
+</tr>
+</tbody>
+</table>
+<h2 id="table-1d.-runtime-scaling-for-large-problem-size">Table 1d. Runtime scaling for large problem size</h2>
+<p>scale: <code>large</code></p>
+<p>problem size: 4,500 × 4,500</p>
+<p>unknowns: 20,250,000</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>total cores</th>
+<th>nodes</th>
+<th>ppn</th>
+<th>MPI ranks</th>
+<th>threads</th>
+<th>unknowns/core</th>
+<th>runtime mean/s</th>
+<th>speedup</th>
+<th>efficiency</th>
+<th>CUs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>20,250,000</td>
+<td>7,546.00</td>
+<td>1.00</td>
+<td>100.0%</td>
+<td>2.0961</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>10,125,000</td>
+<td>7,031.00</td>
+<td>1.07</td>
+<td>53.7%</td>
+<td>1.9531</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>10,125,000</td>
+<td>4,520.50</td>
+<td>1.67</td>
+<td>83.5%</td>
+<td>1.2557</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>4</td>
+<td>5,062,500</td>
+<td>7,088.00</td>
+<td>1.06</td>
+<td>26.6%</td>
+<td>1.9689</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>5,062,500</td>
+<td>4,569.50</td>
+<td>1.65</td>
+<td>41.3%</td>
+<td>1.2693</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>1</td>
+<td>5,062,500</td>
+<td>4,191.50</td>
+<td>1.80</td>
+<td>45.0%</td>
+<td>1.1643</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>8</td>
+<td>2,531,250</td>
+<td>7,149.00</td>
+<td>1.06</td>
+<td>13.2%</td>
+<td>1.9858</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>2,531,250</td>
+<td>4,474.50</td>
+<td>1.69</td>
+<td>21.1%</td>
+<td>1.2429</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>2</td>
+<td>2,531,250</td>
+<td>3,876.00</td>
+<td>1.95</td>
+<td>24.3%</td>
+<td>1.0767</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>1</td>
+<td>2,531,250</td>
+<td>4,289.00</td>
+<td>1.76</td>
+<td>22.0%</td>
+<td>1.1914</td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>8</td>
+<td>1,265,620</td>
+<td>4,390.00</td>
+<td>1.72</td>
+<td>10.7%</td>
+<td>1.2194</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>1,265,620</td>
+<td>2,313.00</td>
+<td>3.26</td>
+<td>20.4%</td>
+<td>0.6425</td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>2</td>
+<td>1,265,620</td>
+<td>3,624.00</td>
+<td>2.08</td>
+<td>13.0%</td>
+<td>1.0067</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>1</td>
+<td>16</td>
+<td>16</td>
+<td>1</td>
+<td>1,265,620</td>
+<td>3,767.50</td>
+<td>2.00</td>
+<td>12.5%</td>
+<td>1.0465</td>
+</tr>
+<tr class="odd">
+<td>32</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>8</td>
+<td>632,812</td>
+<td>2,214.50</td>
+<td>3.41</td>
+<td>10.6%</td>
+<td>0.6151</td>
+</tr>
+<tr class="even">
+<td>32</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>4</td>
+<td>632,812</td>
+<td>1,793.50</td>
+<td>4.21</td>
+<td>13.1%</td>
+<td>0.4982</td>
+</tr>
+<tr class="odd">
+<td>32</td>
+<td>1</td>
+<td>16</td>
+<td>16</td>
+<td>2</td>
+<td>632,812</td>
+<td>1,826.50</td>
+<td>4.13</td>
+<td>12.9%</td>
+<td>0.5074</td>
+</tr>
+<tr class="even">
+<td>32</td>
+<td>1</td>
+<td>32</td>
+<td>32</td>
+<td>1</td>
+<td>632,812</td>
+<td>1,868.50</td>
+<td>4.04</td>
+<td>12.6%</td>
+<td>0.5190</td>
+</tr>
+<tr class="odd">
+<td>64</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>316,406</td>
+<td>1,116.00</td>
+<td>6.76</td>
+<td>10.6%</td>
+<td>0.3100</td>
+</tr>
+<tr class="even">
+<td>64</td>
+<td>1</td>
+<td>16</td>
+<td>16</td>
+<td>4</td>
+<td>316,406</td>
+<td>847.05</td>
+<td>8.91</td>
+<td>13.9%</td>
+<td>0.2353</td>
+</tr>
+<tr class="odd">
+<td>64</td>
+<td>1</td>
+<td>32</td>
+<td>32</td>
+<td>2</td>
+<td>316,406</td>
+<td>830.50</td>
+<td>9.09</td>
+<td>14.2%</td>
+<td>0.2307</td>
+</tr>
+<tr class="even">
+<td>64</td>
+<td>1</td>
+<td>64</td>
+<td>64</td>
+<td>1</td>
+<td>316,406</td>
+<td>826.20</td>
+<td>9.13</td>
+<td>14.3%</td>
+<td>0.2295</td>
+</tr>
+<tr class="odd">
+<td>128</td>
+<td>1</td>
+<td>16</td>
+<td>16</td>
+<td>8</td>
+<td>158,203</td>
+<td>547.10</td>
+<td>13.79</td>
+<td>10.8%</td>
+<td>0.1520</td>
+</tr>
+<tr class="even">
+<td>128</td>
+<td>1</td>
+<td>32</td>
+<td>32</td>
+<td>4</td>
+<td>158,203</td>
+<td>376.30</td>
+<td>20.05</td>
+<td>15.7%</td>
+<td>0.1045</td>
+</tr>
+<tr class="odd">
+<td>128</td>
+<td>1</td>
+<td>64</td>
+<td>64</td>
+<td>2</td>
+<td>158,203</td>
+<td>341.85</td>
+<td>22.07</td>
+<td>17.2%</td>
+<td>0.0950</td>
+</tr>
+<tr class="even">
+<td>128</td>
+<td>1</td>
+<td>128</td>
+<td>128</td>
+<td>1</td>
+<td>158,203</td>
+<td>340.45</td>
+<td>22.16</td>
+<td>17.3%</td>
+<td>0.0946</td>
+</tr>
+</tbody>
+</table>
+<h2 id="table-1e.-runtime-scaling-for-very-large-problem-size">Table 1e. Runtime scaling for very-large problem size</h2>
+<p>scale: <code>very-large</code></p>
+<p>problem size: 6,400 × 6,400</p>
+<p>unknowns: 40,960,000</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>total cores</th>
+<th>nodes</th>
+<th>ppn</th>
+<th>MPI ranks</th>
+<th>threads</th>
+<th>unknowns/core</th>
+<th>runtime mean/s</th>
+<th>speedup</th>
+<th>efficiency</th>
+<th>CUs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>40,960,000</td>
+<td>15,415.00</td>
+<td>1.00</td>
+<td>100.0%</td>
+<td>4.2819</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>20,480,000</td>
+<td>14,170.00</td>
+<td>1.09</td>
+<td>54.4%</td>
+<td>3.9361</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>20,480,000</td>
+<td>9,139.00</td>
+<td>1.69</td>
+<td>84.3%</td>
+<td>2.5386</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>4</td>
+<td>10,240,000</td>
+<td>14,265.00</td>
+<td>1.08</td>
+<td>27.0%</td>
+<td>3.9625</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>10,240,000</td>
+<td>9,245.50</td>
+<td>1.67</td>
+<td>41.7%</td>
+<td>2.5682</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>1</td>
+<td>10,240,000</td>
+<td>8,464.00</td>
+<td>1.82</td>
+<td>45.5%</td>
+<td>2.3511</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>8</td>
+<td>5,120,000</td>
+<td>14,125.00</td>
+<td>1.09</td>
+<td>13.6%</td>
+<td>3.9236</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>5,120,000</td>
+<td>9,360.00</td>
+<td>1.65</td>
+<td>20.6%</td>
+<td>2.6000</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>2</td>
+<td>5,120,000</td>
+<td>8,503.00</td>
+<td>1.81</td>
+<td>22.7%</td>
+<td>2.3619</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>1</td>
+<td>5,120,000</td>
+<td>8,702.00</td>
+<td>1.77</td>
+<td>22.1%</td>
+<td>2.4172</td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>8</td>
+<td>2,560,000</td>
+<td>8,845.00</td>
+<td>1.74</td>
+<td>10.9%</td>
+<td>2.4569</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>2,560,000</td>
+<td>7,311.00</td>
+<td>2.11</td>
+<td>13.2%</td>
+<td>2.0308</td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>2</td>
+<td>2,560,000</td>
+<td>7,375.00</td>
+<td>2.09</td>
+<td>13.1%</td>
+<td>2.0486</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>1</td>
+<td>16</td>
+<td>16</td>
+<td>1</td>
+<td>2,560,000</td>
+<td>7,558.00</td>
+<td>2.04</td>
+<td>12.7%</td>
+<td>2.0994</td>
+</tr>
+<tr class="odd">
+<td>32</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>8</td>
+<td>1,280,000</td>
+<td>4,484.00</td>
+<td>3.44</td>
+<td>10.7%</td>
+<td>1.2456</td>
+</tr>
+<tr class="even">
+<td>32</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>4</td>
+<td>1,280,000</td>
+<td>3,651.00</td>
+<td>4.22</td>
+<td>13.2%</td>
+<td>1.0142</td>
+</tr>
+<tr class="odd">
+<td>32</td>
+<td>1</td>
+<td>16</td>
+<td>16</td>
+<td>2</td>
+<td>1,280,000</td>
+<td>3,685.00</td>
+<td>4.18</td>
+<td>13.1%</td>
+<td>1.0236</td>
+</tr>
+<tr class="even">
+<td>32</td>
+<td>1</td>
+<td>32</td>
+<td>32</td>
+<td>1</td>
+<td>1,280,000</td>
+<td>3,825.00</td>
+<td>4.03</td>
+<td>12.6%</td>
+<td>1.0625</td>
+</tr>
+<tr class="odd">
+<td>64</td>
+<td>1</td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>640,000</td>
+<td>2,271.00</td>
+<td>6.79</td>
+<td>10.6%</td>
+<td>0.6308</td>
+</tr>
+<tr class="even">
+<td>64</td>
+<td>1</td>
+<td>16</td>
+<td>16</td>
+<td>4</td>
+<td>640,000</td>
+<td>1,826.00</td>
+<td>8.44</td>
+<td>13.2%</td>
+<td>0.5072</td>
+</tr>
+<tr class="odd">
+<td>64</td>
+<td>1</td>
+<td>32</td>
+<td>32</td>
+<td>2</td>
+<td>640,000</td>
+<td>1,859.00</td>
+<td>8.29</td>
+<td>13.0%</td>
+<td>0.5164</td>
+</tr>
+<tr class="even">
+<td>64</td>
+<td>1</td>
+<td>64</td>
+<td>64</td>
+<td>1</td>
+<td>640,000</td>
+<td>1,905.00</td>
+<td>8.09</td>
+<td>12.6%</td>
+<td>0.5292</td>
+</tr>
+<tr class="odd">
+<td>128</td>
+<td>1</td>
+<td>16</td>
+<td>16</td>
+<td>8</td>
+<td>320,000</td>
+<td>1,140.00</td>
+<td>13.52</td>
+<td>10.6%</td>
+<td>0.3167</td>
+</tr>
+<tr class="even">
+<td>128</td>
+<td>1</td>
+<td>32</td>
+<td>32</td>
+<td>4</td>
+<td>320,000</td>
+<td>866.40</td>
+<td>17.79</td>
+<td>13.9%</td>
+<td>0.2407</td>
+</tr>
+<tr class="odd">
+<td>128</td>
+<td>1</td>
+<td>64</td>
+<td>64</td>
+<td>2</td>
+<td>320,000</td>
+<td>850.80</td>
+<td>18.12</td>
+<td>14.2%</td>
+<td>0.2363</td>
+</tr>
+<tr class="even">
+<td>128</td>
+<td>1</td>
+<td>128</td>
+<td>128</td>
+<td>1</td>
+<td>320,000</td>
+<td>846.90</td>
+<td>18.20</td>
+<td>14.2%</td>
+<td>0.2352</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

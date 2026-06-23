@@ -1,0 +1,337 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="930" viewBox="0 0 1500 930">
+<style>
+text { font-family: Arial, Helvetica, sans-serif; fill: #222; }
+.title { font-size: 30px; font-weight: 700; }
+.subtitle { font-size: 16px; fill: #555; }
+.panel-title { font-size: 19px; font-weight: 700; }
+.axis-label { font-size: 15px; fill: #333; }
+.tick { font-size: 12px; fill: #555; }
+.grid { stroke: #ddd; stroke-width: 1; }
+.axis { stroke: #333; stroke-width: 1.4; }
+.series { fill: none; stroke-width: 2.7; }
+</style>
+<rect x="0" y="0" width="100%" height="100%" fill="white"/>
+<text class="title" x="750" y="42" text-anchor="middle">Runtime vs Total Cores</text>
+<text class="subtitle" x="750" y="68" text-anchor="middle">Median solve/runtime seconds by thread count; x-axis is nodes x ppn x threads; y-scale: log</text>
+<g transform="translate(0,0)">
+<text class="panel-title" x="86.00" y="112.00">1.00M unknowns</text>
+<rect x="86.00" y="130.00" width="411.33" height="313.00" fill="#fafafa" stroke="#c8c8c8"/>
+<line class="grid" x1="86.00" y1="413.52" x2="497.33" y2="413.52"/>
+<text class="tick" x="77.00" y="417.52" text-anchor="end">5</text>
+<line class="grid" x1="86.00" y1="365.18" x2="497.33" y2="365.18"/>
+<text class="tick" x="77.00" y="369.18" text-anchor="end">10</text>
+<line class="grid" x1="86.00" y1="316.83" x2="497.33" y2="316.83"/>
+<text class="tick" x="77.00" y="320.83" text-anchor="end">20</text>
+<line class="grid" x1="86.00" y1="252.92" x2="497.33" y2="252.92"/>
+<text class="tick" x="77.00" y="256.92" text-anchor="end">50</text>
+<line class="grid" x1="86.00" y1="204.57" x2="497.33" y2="204.57"/>
+<text class="tick" x="77.00" y="208.57" text-anchor="end">100</text>
+<line class="grid" x1="86.00" y1="156.22" x2="497.33" y2="156.22"/>
+<text class="tick" x="77.00" y="160.22" text-anchor="end">200</text>
+<line class="grid" x1="86.00" y1="130.00" x2="86.00" y2="443.00"/>
+<text class="tick" x="86.00" y="463.00" text-anchor="middle">1</text>
+<line class="grid" x1="144.76" y1="130.00" x2="144.76" y2="443.00"/>
+<text class="tick" x="144.76" y="463.00" text-anchor="middle">2</text>
+<line class="grid" x1="203.52" y1="130.00" x2="203.52" y2="443.00"/>
+<text class="tick" x="203.52" y="463.00" text-anchor="middle">4</text>
+<line class="grid" x1="262.29" y1="130.00" x2="262.29" y2="443.00"/>
+<text class="tick" x="262.29" y="463.00" text-anchor="middle">8</text>
+<line class="grid" x1="321.05" y1="130.00" x2="321.05" y2="443.00"/>
+<text class="tick" x="321.05" y="463.00" text-anchor="middle">16</text>
+<line class="grid" x1="379.81" y1="130.00" x2="379.81" y2="443.00"/>
+<text class="tick" x="379.81" y="463.00" text-anchor="middle">32</text>
+<line class="grid" x1="438.57" y1="130.00" x2="438.57" y2="443.00"/>
+<text class="tick" x="438.57" y="463.00" text-anchor="middle">64</text>
+<line class="grid" x1="497.33" y1="130.00" x2="497.33" y2="443.00"/>
+<text class="tick" x="497.33" y="463.00" text-anchor="middle">128</text>
+<line class="axis" x1="86.00" y1="443.00" x2="497.33" y2="443.00"/>
+<line class="axis" x1="86.00" y1="130.00" x2="86.00" y2="443.00"/>
+<path class="series" d="M 86.00 141.54 L 144.76 216.89 L 203.52 253.96 L 262.29 240.00 L 321.05 215.52 L 379.81 289.02 L 438.57 379.55 L 497.33 431.66" stroke="#1f77b4"/>
+<circle cx="86.00" cy="141.54" r="4" fill="#1f77b4" />
+<circle cx="144.76" cy="216.89" r="4" fill="#1f77b4" />
+<circle cx="203.52" cy="253.96" r="4" fill="#1f77b4" />
+<circle cx="262.29" cy="240.00" r="4" fill="#1f77b4" />
+<circle cx="321.05" cy="215.52" r="4" fill="#1f77b4" />
+<circle cx="379.81" cy="289.02" r="4" fill="#1f77b4" />
+<circle cx="438.57" cy="379.55" r="4" fill="#1f77b4" />
+<circle cx="497.33" cy="431.66" r="4" fill="#1f77b4" />
+<path class="series" d="M 144.76 146.32 L 203.52 221.15 L 262.29 262.85 L 321.05 276.53 L 379.81 270.89 L 438.57 370.54 L 497.33 422.89" stroke="#ff7f0e"/>
+<rect x="140.76" y="142.32" width="8" height="8" fill="#ff7f0e" />
+<rect x="199.52" y="217.15" width="8" height="8" fill="#ff7f0e" />
+<rect x="258.29" y="258.85" width="8" height="8" fill="#ff7f0e" />
+<rect x="317.05" y="272.53" width="8" height="8" fill="#ff7f0e" />
+<rect x="375.81" y="266.89" width="8" height="8" fill="#ff7f0e" />
+<rect x="434.57" y="366.54" width="8" height="8" fill="#ff7f0e" />
+<rect x="493.33" y="418.89" width="8" height="8" fill="#ff7f0e" />
+<path class="series" d="M 203.52 147.05 L 262.29 225.64 L 321.05 287.26 L 379.81 306.60 L 438.57 327.25 L 497.33 396.33" stroke="#2ca02c"/>
+<path d="M 203.52 142.05 L 208.52 151.05 L 198.52 151.05 Z" fill="#2ca02c" />
+<path d="M 262.29 220.64 L 267.29 229.64 L 257.29 229.64 Z" fill="#2ca02c" />
+<path d="M 321.05 282.26 L 326.05 291.26 L 316.05 291.26 Z" fill="#2ca02c" />
+<path d="M 379.81 301.60 L 384.81 310.60 L 374.81 310.60 Z" fill="#2ca02c" />
+<path d="M 438.57 322.25 L 443.57 331.25 L 433.57 331.25 Z" fill="#2ca02c" />
+<path d="M 497.33 391.33 L 502.33 400.33 L 492.33 400.33 Z" fill="#2ca02c" />
+<path class="series" d="M 262.29 147.72 L 321.05 229.15 L 379.81 298.81 L 438.57 330.89 L 497.33 334.79" stroke="#d62728"/>
+<path d="M 262.29 142.72 L 267.29 147.72 L 262.29 152.72 L 257.29 147.72 Z" fill="#d62728" />
+<path d="M 321.05 224.15 L 326.05 229.15 L 321.05 234.15 L 316.05 229.15 Z" fill="#d62728" />
+<path d="M 379.81 293.81 L 384.81 298.81 L 379.81 303.81 L 374.81 298.81 Z" fill="#d62728" />
+<path d="M 438.57 325.89 L 443.57 330.89 L 438.57 335.89 L 433.57 330.89 Z" fill="#d62728" />
+<path d="M 497.33 329.79 L 502.33 334.79 L 497.33 339.79 L 492.33 334.79 Z" fill="#d62728" />
+</g>
+<g transform="translate(0,0)">
+<text class="panel-title" x="567.33" y="112.00">5.02M unknowns</text>
+<rect x="567.33" y="130.00" width="411.33" height="313.00" fill="#fafafa" stroke="#c8c8c8"/>
+<line class="grid" x1="567.33" y1="391.59" x2="978.67" y2="391.59"/>
+<text class="tick" x="558.33" y="395.59" text-anchor="end">100</text>
+<line class="grid" x1="567.33" y1="333.03" x2="978.67" y2="333.03"/>
+<text class="tick" x="558.33" y="337.03" text-anchor="end">200</text>
+<line class="grid" x1="567.33" y1="255.61" x2="978.67" y2="255.61"/>
+<text class="tick" x="558.33" y="259.61" text-anchor="end">500</text>
+<line class="grid" x1="567.33" y1="197.05" x2="978.67" y2="197.05"/>
+<text class="tick" x="558.33" y="201.05" text-anchor="end">1k</text>
+<line class="grid" x1="567.33" y1="138.49" x2="978.67" y2="138.49"/>
+<text class="tick" x="558.33" y="142.49" text-anchor="end">2k</text>
+<line class="grid" x1="567.33" y1="130.00" x2="567.33" y2="443.00"/>
+<text class="tick" x="567.33" y="463.00" text-anchor="middle">1</text>
+<line class="grid" x1="626.10" y1="130.00" x2="626.10" y2="443.00"/>
+<text class="tick" x="626.10" y="463.00" text-anchor="middle">2</text>
+<line class="grid" x1="684.86" y1="130.00" x2="684.86" y2="443.00"/>
+<text class="tick" x="684.86" y="463.00" text-anchor="middle">4</text>
+<line class="grid" x1="743.62" y1="130.00" x2="743.62" y2="443.00"/>
+<text class="tick" x="743.62" y="463.00" text-anchor="middle">8</text>
+<line class="grid" x1="802.38" y1="130.00" x2="802.38" y2="443.00"/>
+<text class="tick" x="802.38" y="463.00" text-anchor="middle">16</text>
+<line class="grid" x1="861.14" y1="130.00" x2="861.14" y2="443.00"/>
+<text class="tick" x="861.14" y="463.00" text-anchor="middle">32</text>
+<line class="grid" x1="919.90" y1="130.00" x2="919.90" y2="443.00"/>
+<text class="tick" x="919.90" y="463.00" text-anchor="middle">64</text>
+<line class="grid" x1="978.67" y1="130.00" x2="978.67" y2="443.00"/>
+<text class="tick" x="978.67" y="463.00" text-anchor="middle">128</text>
+<line class="axis" x1="567.33" y1="443.00" x2="978.67" y2="443.00"/>
+<line class="axis" x1="567.33" y1="130.00" x2="567.33" y2="443.00"/>
+<path class="series" d="M 567.33 143.98 L 626.10 186.28 L 684.86 192.77 L 743.62 191.57 L 802.38 214.84 L 861.14 290.64 L 919.90 366.05 L 978.67 429.27" stroke="#1f77b4"/>
+<circle cx="567.33" cy="143.98" r="4" fill="#1f77b4" />
+<circle cx="626.10" cy="186.28" r="4" fill="#1f77b4" />
+<circle cx="684.86" cy="192.77" r="4" fill="#1f77b4" />
+<circle cx="743.62" cy="191.57" r="4" fill="#1f77b4" />
+<circle cx="802.38" cy="214.84" r="4" fill="#1f77b4" />
+<circle cx="861.14" cy="290.64" r="4" fill="#1f77b4" />
+<circle cx="919.90" cy="366.05" r="4" fill="#1f77b4" />
+<circle cx="978.67" cy="429.27" r="4" fill="#1f77b4" />
+<path class="series" d="M 626.10 150.16 L 684.86 186.35 L 743.62 192.69 L 802.38 214.09 L 861.14 290.11 L 919.90 365.98 L 978.67 428.30" stroke="#ff7f0e"/>
+<rect x="622.10" y="146.16" width="8" height="8" fill="#ff7f0e" />
+<rect x="680.86" y="182.35" width="8" height="8" fill="#ff7f0e" />
+<rect x="739.62" y="188.69" width="8" height="8" fill="#ff7f0e" />
+<rect x="798.38" y="210.09" width="8" height="8" fill="#ff7f0e" />
+<rect x="857.14" y="286.11" width="8" height="8" fill="#ff7f0e" />
+<rect x="915.90" y="361.98" width="8" height="8" fill="#ff7f0e" />
+<rect x="974.67" y="424.30" width="8" height="8" fill="#ff7f0e" />
+<path class="series" d="M 684.86 149.91 L 743.62 185.39 L 802.38 212.91 L 861.14 282.13 L 919.90 353.86 L 978.67 414.77" stroke="#2ca02c"/>
+<path d="M 684.86 144.91 L 689.86 153.91 L 679.86 153.91 Z" fill="#2ca02c" />
+<path d="M 743.62 180.39 L 748.62 189.39 L 738.62 189.39 Z" fill="#2ca02c" />
+<path d="M 802.38 207.91 L 807.38 216.91 L 797.38 216.91 Z" fill="#2ca02c" />
+<path d="M 861.14 277.13 L 866.14 286.13 L 856.14 286.13 Z" fill="#2ca02c" />
+<path d="M 919.90 348.86 L 924.90 357.86 L 914.90 357.86 Z" fill="#2ca02c" />
+<path d="M 978.67 409.77 L 983.67 418.77 L 973.67 418.77 Z" fill="#2ca02c" />
+<path class="series" d="M 743.62 148.95 L 802.38 190.23 L 861.14 250.39 L 919.90 316.68 L 978.67 376.96" stroke="#d62728"/>
+<path d="M 743.62 143.95 L 748.62 148.95 L 743.62 153.95 L 738.62 148.95 Z" fill="#d62728" />
+<path d="M 802.38 185.23 L 807.38 190.23 L 802.38 195.23 L 797.38 190.23 Z" fill="#d62728" />
+<path d="M 861.14 245.39 L 866.14 250.39 L 861.14 255.39 L 856.14 250.39 Z" fill="#d62728" />
+<path d="M 919.90 311.68 L 924.90 316.68 L 919.90 321.68 L 914.90 316.68 Z" fill="#d62728" />
+<path d="M 978.67 371.96 L 983.67 376.96 L 978.67 381.96 L 973.67 376.96 Z" fill="#d62728" />
+</g>
+<g transform="translate(0,0)">
+<text class="panel-title" x="1048.67" y="112.00">9.99M unknowns</text>
+<rect x="1048.67" y="130.00" width="411.33" height="313.00" fill="#fafafa" stroke="#c8c8c8"/>
+<line class="grid" x1="1048.67" y1="396.05" x2="1460.00" y2="396.05"/>
+<text class="tick" x="1039.67" y="400.05" text-anchor="end">200</text>
+<line class="grid" x1="1048.67" y1="317.05" x2="1460.00" y2="317.05"/>
+<text class="tick" x="1039.67" y="321.05" text-anchor="end">500</text>
+<line class="grid" x1="1048.67" y1="257.29" x2="1460.00" y2="257.29"/>
+<text class="tick" x="1039.67" y="261.29" text-anchor="end">1k</text>
+<line class="grid" x1="1048.67" y1="197.53" x2="1460.00" y2="197.53"/>
+<text class="tick" x="1039.67" y="201.53" text-anchor="end">2k</text>
+<line class="grid" x1="1048.67" y1="130.00" x2="1048.67" y2="443.00"/>
+<text class="tick" x="1048.67" y="463.00" text-anchor="middle">1</text>
+<line class="grid" x1="1107.43" y1="130.00" x2="1107.43" y2="443.00"/>
+<text class="tick" x="1107.43" y="463.00" text-anchor="middle">2</text>
+<line class="grid" x1="1166.19" y1="130.00" x2="1166.19" y2="443.00"/>
+<text class="tick" x="1166.19" y="463.00" text-anchor="middle">4</text>
+<line class="grid" x1="1224.95" y1="130.00" x2="1224.95" y2="443.00"/>
+<text class="tick" x="1224.95" y="463.00" text-anchor="middle">8</text>
+<line class="grid" x1="1283.71" y1="130.00" x2="1283.71" y2="443.00"/>
+<text class="tick" x="1283.71" y="463.00" text-anchor="middle">16</text>
+<line class="grid" x1="1342.48" y1="130.00" x2="1342.48" y2="443.00"/>
+<text class="tick" x="1342.48" y="463.00" text-anchor="middle">32</text>
+<line class="grid" x1="1401.24" y1="130.00" x2="1401.24" y2="443.00"/>
+<text class="tick" x="1401.24" y="463.00" text-anchor="middle">64</text>
+<line class="grid" x1="1460.00" y1="130.00" x2="1460.00" y2="443.00"/>
+<text class="tick" x="1460.00" y="463.00" text-anchor="middle">128</text>
+<line class="axis" x1="1048.67" y1="443.00" x2="1460.00" y2="443.00"/>
+<line class="axis" x1="1048.67" y1="130.00" x2="1048.67" y2="443.00"/>
+<path class="series" d="M 1048.67 144.27 L 1107.43 187.88 L 1166.19 194.82 L 1224.95 191.50 L 1283.71 204.81 L 1342.48 276.10 L 1401.24 352.96 L 1460.00 428.99" stroke="#1f77b4"/>
+<circle cx="1048.67" cy="144.27" r="4" fill="#1f77b4" />
+<circle cx="1107.43" cy="187.88" r="4" fill="#1f77b4" />
+<circle cx="1166.19" cy="194.82" r="4" fill="#1f77b4" />
+<circle cx="1224.95" cy="191.50" r="4" fill="#1f77b4" />
+<circle cx="1283.71" cy="204.81" r="4" fill="#1f77b4" />
+<circle cx="1342.48" cy="276.10" r="4" fill="#1f77b4" />
+<circle cx="1401.24" cy="352.96" r="4" fill="#1f77b4" />
+<circle cx="1460.00" cy="428.99" r="4" fill="#1f77b4" />
+<path class="series" d="M 1107.43 150.22 L 1166.19 187.63 L 1224.95 194.65 L 1283.71 206.76 L 1342.48 275.49 L 1401.24 352.38 L 1460.00 428.86" stroke="#ff7f0e"/>
+<rect x="1103.43" y="146.22" width="8" height="8" fill="#ff7f0e" />
+<rect x="1162.19" y="183.63" width="8" height="8" fill="#ff7f0e" />
+<rect x="1220.95" y="190.65" width="8" height="8" fill="#ff7f0e" />
+<rect x="1279.71" y="202.76" width="8" height="8" fill="#ff7f0e" />
+<rect x="1338.48" y="271.49" width="8" height="8" fill="#ff7f0e" />
+<rect x="1397.24" y="348.38" width="8" height="8" fill="#ff7f0e" />
+<rect x="1456.00" y="424.86" width="8" height="8" fill="#ff7f0e" />
+<path class="series" d="M 1166.19 149.85 L 1224.95 186.42 L 1283.71 208.41 L 1342.48 273.97 L 1401.24 343.90 L 1460.00 416.71" stroke="#2ca02c"/>
+<path d="M 1166.19 144.85 L 1171.19 153.85 L 1161.19 153.85 Z" fill="#2ca02c" />
+<path d="M 1224.95 181.42 L 1229.95 190.42 L 1219.95 190.42 Z" fill="#2ca02c" />
+<path d="M 1283.71 203.41 L 1288.71 212.41 L 1278.71 212.41 Z" fill="#2ca02c" />
+<path d="M 1342.48 268.97 L 1347.48 277.97 L 1337.48 277.97 Z" fill="#2ca02c" />
+<path d="M 1401.24 338.90 L 1406.24 347.90 L 1396.24 347.90 Z" fill="#2ca02c" />
+<path d="M 1460.00 411.71 L 1465.00 420.71 L 1455.00 420.71 Z" fill="#2ca02c" />
+<path class="series" d="M 1224.95 150.12 L 1283.71 191.10 L 1342.48 249.86 L 1401.24 311.90 L 1460.00 379.23" stroke="#d62728"/>
+<path d="M 1224.95 145.12 L 1229.95 150.12 L 1224.95 155.12 L 1219.95 150.12 Z" fill="#d62728" />
+<path d="M 1283.71 186.10 L 1288.71 191.10 L 1283.71 196.10 L 1278.71 191.10 Z" fill="#d62728" />
+<path d="M 1342.48 244.86 L 1347.48 249.86 L 1342.48 254.86 L 1337.48 249.86 Z" fill="#d62728" />
+<path d="M 1401.24 306.90 L 1406.24 311.90 L 1401.24 316.90 L 1396.24 311.90 Z" fill="#d62728" />
+<path d="M 1460.00 374.23 L 1465.00 379.23 L 1460.00 384.23 L 1455.00 379.23 Z" fill="#d62728" />
+</g>
+<g transform="translate(0,0)">
+<text class="panel-title" x="86.00" y="517.00">20.25M unknowns</text>
+<rect x="86.00" y="535.00" width="411.33" height="313.00" fill="#fafafa" stroke="#c8c8c8"/>
+<line class="grid" x1="86.00" y1="798.05" x2="497.33" y2="798.05"/>
+<text class="tick" x="77.00" y="802.05" text-anchor="end">500</text>
+<line class="grid" x1="86.00" y1="734.73" x2="497.33" y2="734.73"/>
+<text class="tick" x="77.00" y="738.73" text-anchor="end">1k</text>
+<line class="grid" x1="86.00" y1="671.41" x2="497.33" y2="671.41"/>
+<text class="tick" x="77.00" y="675.41" text-anchor="end">2k</text>
+<line class="grid" x1="86.00" y1="587.72" x2="497.33" y2="587.72"/>
+<text class="tick" x="77.00" y="591.72" text-anchor="end">5k</text>
+<line class="grid" x1="86.00" y1="535.00" x2="86.00" y2="848.00"/>
+<text class="tick" x="86.00" y="868.00" text-anchor="middle">1</text>
+<line class="grid" x1="144.76" y1="535.00" x2="144.76" y2="848.00"/>
+<text class="tick" x="144.76" y="868.00" text-anchor="middle">2</text>
+<line class="grid" x1="203.52" y1="535.00" x2="203.52" y2="848.00"/>
+<text class="tick" x="203.52" y="868.00" text-anchor="middle">4</text>
+<line class="grid" x1="262.29" y1="535.00" x2="262.29" y2="848.00"/>
+<text class="tick" x="262.29" y="868.00" text-anchor="middle">8</text>
+<line class="grid" x1="321.05" y1="535.00" x2="321.05" y2="848.00"/>
+<text class="tick" x="321.05" y="868.00" text-anchor="middle">16</text>
+<line class="grid" x1="379.81" y1="535.00" x2="379.81" y2="848.00"/>
+<text class="tick" x="379.81" y="868.00" text-anchor="middle">32</text>
+<line class="grid" x1="438.57" y1="535.00" x2="438.57" y2="848.00"/>
+<text class="tick" x="438.57" y="868.00" text-anchor="middle">64</text>
+<line class="grid" x1="497.33" y1="535.00" x2="497.33" y2="848.00"/>
+<text class="tick" x="497.33" y="868.00" text-anchor="middle">128</text>
+<line class="axis" x1="86.00" y1="848.00" x2="497.33" y2="848.00"/>
+<line class="axis" x1="86.00" y1="535.00" x2="86.00" y2="848.00"/>
+<path class="series" d="M 86.00 550.12 L 144.76 596.92 L 203.52 603.83 L 262.29 601.73 L 321.05 613.57 L 379.81 677.63 L 438.57 752.17 L 497.33 833.15" stroke="#1f77b4"/>
+<circle cx="86.00" cy="550.12" r="4" fill="#1f77b4" />
+<circle cx="144.76" cy="596.92" r="4" fill="#1f77b4" />
+<circle cx="203.52" cy="603.83" r="4" fill="#1f77b4" />
+<circle cx="262.29" cy="601.73" r="4" fill="#1f77b4" />
+<circle cx="321.05" cy="613.57" r="4" fill="#1f77b4" />
+<circle cx="379.81" cy="677.63" r="4" fill="#1f77b4" />
+<circle cx="438.57" cy="752.17" r="4" fill="#1f77b4" />
+<circle cx="497.33" cy="833.15" r="4" fill="#1f77b4" />
+<path class="series" d="M 144.76 556.58 L 203.52 595.94 L 262.29 610.97 L 321.05 617.12 L 379.81 679.70 L 438.57 751.70 L 497.33 832.78" stroke="#ff7f0e"/>
+<rect x="140.76" y="552.58" width="8" height="8" fill="#ff7f0e" />
+<rect x="199.52" y="591.94" width="8" height="8" fill="#ff7f0e" />
+<rect x="258.29" y="606.97" width="8" height="8" fill="#ff7f0e" />
+<rect x="317.05" y="613.12" width="8" height="8" fill="#ff7f0e" />
+<rect x="375.81" y="675.70" width="8" height="8" fill="#ff7f0e" />
+<rect x="434.57" y="747.70" width="8" height="8" fill="#ff7f0e" />
+<rect x="493.33" y="828.78" width="8" height="8" fill="#ff7f0e" />
+<path class="series" d="M 203.52 555.84 L 262.29 597.86 L 321.05 658.13 L 379.81 681.37 L 438.57 749.89 L 497.33 824.01" stroke="#2ca02c"/>
+<path d="M 203.52 550.84 L 208.52 559.84 L 198.52 559.84 Z" fill="#2ca02c" />
+<path d="M 262.29 592.86 L 267.29 601.86 L 257.29 601.86 Z" fill="#2ca02c" />
+<path d="M 321.05 653.13 L 326.05 662.13 L 316.05 662.13 Z" fill="#2ca02c" />
+<path d="M 379.81 676.37 L 384.81 685.37 L 374.81 685.37 Z" fill="#2ca02c" />
+<path d="M 438.57 744.89 L 443.57 753.89 L 433.57 753.89 Z" fill="#2ca02c" />
+<path d="M 497.33 819.01 L 502.33 828.01 L 492.33 828.01 Z" fill="#2ca02c" />
+<path class="series" d="M 262.29 555.06 L 321.05 599.60 L 379.81 662.11 L 438.57 724.71 L 497.33 789.82" stroke="#d62728"/>
+<path d="M 262.29 550.06 L 267.29 555.06 L 262.29 560.06 L 257.29 555.06 Z" fill="#d62728" />
+<path d="M 321.05 594.60 L 326.05 599.60 L 321.05 604.60 L 316.05 599.60 Z" fill="#d62728" />
+<path d="M 379.81 657.11 L 384.81 662.11 L 379.81 667.11 L 374.81 662.11 Z" fill="#d62728" />
+<path d="M 438.57 719.71 L 443.57 724.71 L 438.57 729.71 L 433.57 724.71 Z" fill="#d62728" />
+<path d="M 497.33 784.82 L 502.33 789.82 L 497.33 794.82 L 492.33 789.82 Z" fill="#d62728" />
+</g>
+<g transform="translate(0,0)">
+<text class="panel-title" x="567.33" y="517.00">40.96M unknowns</text>
+<rect x="567.33" y="535.00" width="411.33" height="313.00" fill="#fafafa" stroke="#c8c8c8"/>
+<line class="grid" x1="567.33" y1="816.14" x2="978.67" y2="816.14"/>
+<text class="tick" x="558.33" y="820.14" text-anchor="end">1k</text>
+<line class="grid" x1="567.33" y1="748.97" x2="978.67" y2="748.97"/>
+<text class="tick" x="558.33" y="752.97" text-anchor="end">2k</text>
+<line class="grid" x1="567.33" y1="660.16" x2="978.67" y2="660.16"/>
+<text class="tick" x="558.33" y="664.16" text-anchor="end">5k</text>
+<line class="grid" x1="567.33" y1="592.98" x2="978.67" y2="592.98"/>
+<text class="tick" x="558.33" y="596.98" text-anchor="end">10k</text>
+<line class="grid" x1="567.33" y1="535.00" x2="567.33" y2="848.00"/>
+<text class="tick" x="567.33" y="868.00" text-anchor="middle">1</text>
+<line class="grid" x1="626.10" y1="535.00" x2="626.10" y2="848.00"/>
+<text class="tick" x="626.10" y="868.00" text-anchor="middle">2</text>
+<line class="grid" x1="684.86" y1="535.00" x2="684.86" y2="848.00"/>
+<text class="tick" x="684.86" y="868.00" text-anchor="middle">4</text>
+<line class="grid" x1="743.62" y1="535.00" x2="743.62" y2="848.00"/>
+<text class="tick" x="743.62" y="868.00" text-anchor="middle">8</text>
+<line class="grid" x1="802.38" y1="535.00" x2="802.38" y2="848.00"/>
+<text class="tick" x="802.38" y="868.00" text-anchor="middle">16</text>
+<line class="grid" x1="861.14" y1="535.00" x2="861.14" y2="848.00"/>
+<text class="tick" x="861.14" y="868.00" text-anchor="middle">32</text>
+<line class="grid" x1="919.90" y1="535.00" x2="919.90" y2="848.00"/>
+<text class="tick" x="919.90" y="868.00" text-anchor="middle">64</text>
+<line class="grid" x1="978.67" y1="535.00" x2="978.67" y2="848.00"/>
+<text class="tick" x="978.67" y="868.00" text-anchor="middle">128</text>
+<line class="axis" x1="567.33" y1="848.00" x2="978.67" y2="848.00"/>
+<line class="axis" x1="567.33" y1="535.00" x2="567.33" y2="848.00"/>
+<path class="series" d="M 567.33 551.04 L 626.10 601.71 L 684.86 609.15 L 743.62 606.46 L 802.38 620.12 L 861.14 686.12 L 919.90 753.68 L 978.67 832.25" stroke="#1f77b4"/>
+<circle cx="567.33" cy="551.04" r="4" fill="#1f77b4" />
+<circle cx="626.10" cy="601.71" r="4" fill="#1f77b4" />
+<circle cx="684.86" cy="609.15" r="4" fill="#1f77b4" />
+<circle cx="743.62" cy="606.46" r="4" fill="#1f77b4" />
+<circle cx="802.38" cy="620.12" r="4" fill="#1f77b4" />
+<circle cx="861.14" cy="686.12" r="4" fill="#1f77b4" />
+<circle cx="919.90" cy="753.68" r="4" fill="#1f77b4" />
+<circle cx="978.67" cy="832.25" r="4" fill="#1f77b4" />
+<path class="series" d="M 626.10 559.20 L 684.86 600.59 L 743.62 608.70 L 802.38 622.49 L 861.14 689.74 L 919.90 756.05 L 978.67 831.80" stroke="#ff7f0e"/>
+<rect x="622.10" y="555.20" width="8" height="8" fill="#ff7f0e" />
+<rect x="680.86" y="596.59" width="8" height="8" fill="#ff7f0e" />
+<rect x="739.62" y="604.70" width="8" height="8" fill="#ff7f0e" />
+<rect x="798.38" y="618.49" width="8" height="8" fill="#ff7f0e" />
+<rect x="857.14" y="685.74" width="8" height="8" fill="#ff7f0e" />
+<rect x="915.90" y="752.05" width="8" height="8" fill="#ff7f0e" />
+<rect x="974.67" y="827.80" width="8" height="8" fill="#ff7f0e" />
+<path class="series" d="M 684.86 558.56 L 743.62 599.39 L 802.38 623.34 L 861.14 690.64 L 919.90 757.79 L 978.67 830.04" stroke="#2ca02c"/>
+<path d="M 684.86 553.56 L 689.86 562.56 L 679.86 562.56 Z" fill="#2ca02c" />
+<path d="M 743.62 594.39 L 748.62 603.39 L 738.62 603.39 Z" fill="#2ca02c" />
+<path d="M 802.38 618.34 L 807.38 627.34 L 797.38 627.34 Z" fill="#2ca02c" />
+<path d="M 861.14 685.64 L 866.14 694.64 L 856.14 694.64 Z" fill="#2ca02c" />
+<path d="M 919.90 752.79 L 924.90 761.79 L 914.90 761.79 Z" fill="#2ca02c" />
+<path d="M 978.67 825.04 L 983.67 834.04 L 973.67 834.04 Z" fill="#2ca02c" />
+<path class="series" d="M 743.62 559.51 L 802.38 604.88 L 861.14 670.72 L 919.90 736.65 L 978.67 803.45" stroke="#d62728"/>
+<path d="M 743.62 554.51 L 748.62 559.51 L 743.62 564.51 L 738.62 559.51 Z" fill="#d62728" />
+<path d="M 802.38 599.88 L 807.38 604.88 L 802.38 609.88 L 797.38 604.88 Z" fill="#d62728" />
+<path d="M 861.14 665.72 L 866.14 670.72 L 861.14 675.72 L 856.14 670.72 Z" fill="#d62728" />
+<path d="M 919.90 731.65 L 924.90 736.65 L 919.90 741.65 L 914.90 736.65 Z" fill="#d62728" />
+<path d="M 978.67 798.45 L 983.67 803.45 L 978.67 808.45 L 973.67 803.45 Z" fill="#d62728" />
+</g>
+<text class="axis-label" x="773.00" y="906.00" text-anchor="middle">Total cores = nodes x ppn x threads</text>
+<text class="axis-label" x="24" y="465.00" text-anchor="middle" transform="rotate(-90 24 465.00)">Runtime / solve time (seconds)</text>
+<text class="panel-title" x="1086.67" y="565.00">Threads</text>
+<line x1="1086.67" y1="595.00" x2="1120.67" y2="595.00" stroke="#1f77b4" stroke-width="2.7"/>
+<circle cx="1103.67" cy="595.00" r="4" fill="#1f77b4" />
+<text class="axis-label" x="1134.67" y="600.00">T = 1</text>
+<line x1="1086.67" y1="625.00" x2="1120.67" y2="625.00" stroke="#ff7f0e" stroke-width="2.7"/>
+<rect x="1099.67" y="621.00" width="8" height="8" fill="#ff7f0e" />
+<text class="axis-label" x="1134.67" y="630.00">T = 2</text>
+<line x1="1086.67" y1="655.00" x2="1120.67" y2="655.00" stroke="#2ca02c" stroke-width="2.7"/>
+<path d="M 1103.67 650.00 L 1108.67 659.00 L 1098.67 659.00 Z" fill="#2ca02c" />
+<text class="axis-label" x="1134.67" y="660.00">T = 4</text>
+<line x1="1086.67" y1="685.00" x2="1120.67" y2="685.00" stroke="#d62728" stroke-width="2.7"/>
+<path d="M 1103.67 680.00 L 1108.67 685.00 L 1103.67 690.00 L 1098.67 685.00 Z" fill="#d62728" />
+<text class="axis-label" x="1134.67" y="690.00">T = 8</text>
+</svg>
