@@ -117,3 +117,11 @@ outputs/runtime_scaling_table_exercise_answers.md
 - 为什么要 `groupby`
 - 为什么 fastest configuration 不一定是 cheapest configuration
 - 为什么 CUs 对 HPC 报告很重要
+
+## Quick Check
+
+1. raw runs 和 report-ready table 的区别是什么？
+2. 为什么分组字段里要包含 `nodes`、`ppn`、`threads`、`mpi_ranks`？
+3. `runtime_mean_s` 和 `runtime_std_s` 分别说明什么？
+4. `speedup` 和 `efficiency` 的公式分别是什么？
+5. 为什么最快配置不一定是最省 CUs 的配置？

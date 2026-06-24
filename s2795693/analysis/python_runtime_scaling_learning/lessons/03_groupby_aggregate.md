@@ -48,3 +48,11 @@ aggregated = (
 ```text
 outputs/runtime_scaling_aggregated_pandas.csv
 ```
+
+## Quick Check
+
+1. 为什么同一个配置可能会有多行 raw runs？
+2. `groupby(["scale", "unknowns", "total_cores", "threads"])` 的分组依据是什么？
+3. 为什么这里选择 median runtime 作为主趋势值？
+4. `repeat_count` 可以帮助你判断什么？
+5. `mean_runtime_seconds`、`min_runtime_seconds`、`max_runtime_seconds` 分别适合回答什么问题？

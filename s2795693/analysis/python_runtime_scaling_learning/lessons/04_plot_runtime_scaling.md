@@ -50,3 +50,11 @@ outputs/runtime_scaling_interpretation.md
 linear y-axis 更直观，适合看绝对 runtime 差距。
 
 log-y 更适合 scaling 图，因为 1 core 到 128 cores 的 runtime 跨度很大。log-y 能让高 core count 区域的差异更清楚。
+
+## Quick Check
+
+1. Runtime Scaling 图的横轴和纵轴分别是什么？
+2. 为什么每个 problem size 要分成不同 subplot？
+3. 每条线里的 `T = 1, 2, 4, 8` 表示什么？
+4. linear y-axis 和 log-y axis 分别适合观察什么？
+5. 为什么这张图现在是 optional visual check，而不是报告主证据？

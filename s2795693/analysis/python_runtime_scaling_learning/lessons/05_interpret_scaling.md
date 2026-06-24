@@ -93,3 +93,11 @@ At the same total core count, [MPI-only/hybrid] is generally better in this data
 Efficiency remains below ideal scaling for most configurations, although some low-core-count cases exceed 100%, likely due to measured superlinear or baseline effects.
 Because all runs use one node, CU cost is proportional to runtime in this dataset.
 ```
+
+## Quick Check
+
+1. 判断 scaling 是否有效时，应该在同一个 `scale` 内比较什么？
+2. 同一个 `total cores` 下，如何比较 MPI-only 和 hybrid？
+3. `speedup = baseline runtime / runtime mean` 中 baseline 指什么？
+4. 为什么 efficiency 可能超过 100%，但不应该直接改成 100%？
+5. 在当前单节点数据中，为什么 CUs 和 runtime 成正比？

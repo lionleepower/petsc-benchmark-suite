@@ -50,3 +50,10 @@ sudo apt install python3.10-venv
 ```
 
 本目录的 `setup_env.sh` 也会优先尝试使用 `uv venv`。如果你的机器上有 `uv`，通常不需要额外安装 `python3-venv`。
+
+## Quick Check
+
+1. 为什么不建议把 `pandas` 和 `matplotlib` 直接装进系统 Python？
+2. 激活 `.venv` 之后，`python` 指向的是系统 Python 还是虚拟环境里的 Python？
+3. 如何检查当前环境里 `pandas` 和 `matplotlib` 是否安装成功？
+4. 如果重新打开一个终端，为什么需要再次运行 `source .venv/bin/activate`？

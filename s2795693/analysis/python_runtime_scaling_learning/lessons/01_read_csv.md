@@ -43,3 +43,25 @@ df.describe()
 ```
 
 这些方法的目的不是做最终分析，而是避免在不了解数据时直接画图。
+
+## Quick Check
+
+1. `pd.read_csv(...)` 返回的对象是什么？
+
+返回的是 pandas `DataFrame`，可以理解成带列名的表格。
+
+2. `df.shape[0]` 和 `df.shape[1]` 分别表示什么？
+
+`df.shape[0]` 表示行数 rows，`df.shape[1]` 表示列数 columns。
+
+3. `df.columns` 和 `df.shape[1]` 有什么区别？
+
+`df.columns` 给出列名，`df.shape[1]` 给出列的数量。
+
+4. `df.info()` 主要帮助你检查哪些信息？
+
+它可以帮助检查行数、列数、列名、每列的 non-null 数量、数据类型 dtype，以及内存占用。
+
+5. `dropna().unique()` 通常用来观察什么？
+
+通常用来观察某一列里有哪些不同取值。`dropna()` 用来去掉空值或缺失值，`unique()` 用来找出不重复的值。

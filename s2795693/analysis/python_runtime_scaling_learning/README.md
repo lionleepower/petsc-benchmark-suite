@@ -55,6 +55,14 @@ python scripts/04_plot_runtime_scaling.py
 7. `lessons/exercises.md`
 8. `lessons/04_plot_runtime_scaling.md` optional visual check
 
+## Question Bank
+
+学习过程中问过的问题会记录在 `QUESTIONS.md`。之后继续向 Codex 询问和本学习项目有关的问题时，也请把新的问题、核心解释和可复查命令追加到这个问题库中，方便后面复习。
+
+## Review Notes
+
+批改 lesson 里的 Quick Check 或练习答案时，保留原来的答案，不要直接覆盖。请在原答案下面另起一行写批改意见、修正答案或补充解释，方便对照看到自己的原始理解和修改后的理解。
+
 ## 2. Expected Outputs
 
 运行到最后会生成：

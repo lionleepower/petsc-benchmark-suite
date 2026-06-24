@@ -1,6 +1,13 @@
+static char help[] = "Solves a linear system in parallel with KSP.\n\
+Input parameters include:\n\
+  -view_exact_sol   : write exact solution vector to stdout\n\
+  -m <mesh_x>       : number of mesh points in x-direction\n\
+  -n <mesh_y>       : number of mesh points in y-direction\n\
+  -p <mesh_z>       : number of mesh points in z-direction\n\n";
+
 #include <petscksp.h>
 
-int main(int argc, char **argv)
+int main(int argc, char **args)
 {
   Mat         A;
   Vec         u, b, x;
@@ -9,8 +16,14 @@ int main(int argc, char **argv)
   PetscInt    Istart, Iend, Ii, i, j, k, J, K;
   PetscScalar v;
   PetscReal   norm;
+  PetscBool   flg;
 
-  PetscCall(PetscInitialize(&argc, &argv, NULL, NULL));
+  PetscFunctionBeginUser;
+  PetscCall(PetscInitialize(&argc, &args, NULL, help));
+  PetscCall(PetscOptionsGetInt(NULL, NULL, "-m", &m, NULL));
+  PetscCall(PetscOptionsGetInt(NULL, NULL, "-n", &n, NULL));
+  PetscCall(PetscOptionsGetInt(NULL, NULL, "-p", &p, NULL));
+
 
   /*
     Build an (m*n*p) x (m*n*p) sparse matrix for the seven-point stencil.
@@ -18,6 +31,8 @@ int main(int argc, char **argv)
   PetscCall(MatCreate(PETSC_COMM_WORLD, &A));
   PetscCall(MatSetSizes(A, PETSC_DECIDE, PETSC_DECIDE, m * n * p, m * n * p));
   PetscCall(MatSetFromOptions(A));
+
+
   PetscCall(MatMPIAIJSetPreallocation(A, 7, NULL, 7, NULL));
   PetscCall(MatSeqAIJSetPreallocation(A, 7, NULL));
 
@@ -56,13 +71,13 @@ int main(int argc, char **argv)
     }
 
 
-    // Back neighbor: (i, j, k+1)
+    // Back neighbor: (i, j, k-1)
     if (k > 0) {
       K = Ii - m * n;
       PetscCall(MatSetValues(A, 1, &Ii, 1, &K, &v, INSERT_VALUES));
     }
 
-    // Front neighbor: (i, j, k-1)
+    // Front neighbor: (i, j, k+1)
     if (k < p - 1) {
       K = Ii + m * n;
       PetscCall(MatSetValues(A, 1, &Ii, 1, &K, &v, INSERT_VALUES));
@@ -77,6 +92,13 @@ int main(int argc, char **argv)
   PetscCall(MatAssemblyBegin(A, MAT_FINAL_ASSEMBLY));
   PetscCall(MatAssemblyEnd(A, MAT_FINAL_ASSEMBLY));
 
+    /* The matrix is symmetric for this stencil. */
+  PetscCall(MatSetOption(A, MAT_SYMMETRIC, PETSC_TRUE));
+
+
+
+
+
   PetscCall(VecCreate(PETSC_COMM_WORLD, &u));
   PetscCall(VecSetSizes(u, PETSC_DECIDE, m * n * p));
   PetscCall(VecSetFromOptions(u));
@@ -89,8 +111,21 @@ int main(int argc, char **argv)
   PetscCall(VecSet(u, 1.0));
   PetscCall(MatMult(A, u, b));
 
+  flg = PETSC_FALSE;
+  PetscCall(PetscOptionsGetBool(NULL, NULL, "-view_exact_sol", &flg, NULL));
+  if (flg) PetscCall(VecView(u, PETSC_VIEWER_STDOUT_WORLD));
+  
+
   PetscCall(KSPCreate(PETSC_COMM_WORLD, &ksp));
   PetscCall(KSPSetOperators(ksp, A, A));
+
+
+
+  /*
+    Set a default relative tolerance. PETSc runtime options can still
+    override this later with KSPSetFromOptions().
+  */
+  PetscCall(KSPSetTolerances(ksp, 1.e-2 / ((m + 1) * (n + 1) * (p+1)), 1.e-50, PETSC_CURRENT, PETSC_CURRENT));
   PetscCall(KSPSetFromOptions(ksp));
   PetscCall(KSPSolve(ksp, b, x));
 

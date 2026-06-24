@@ -90,3 +90,11 @@ T = 8
 1. 增加 total cores 对 runtime 的整体影响。
 2. CUs 为什么和 total cores 不同。
 3. 为什么 efficiency 可能超过 100%。
+
+## Quick Check
+
+1. `idxmin()` 返回的是最小值本身，还是最小值所在行的 index？
+2. 为什么找最快配置时看 `runtime_mean_s`，找最便宜配置时看 `cu`？
+3. `df[df["efficiency"] > 1.0]` 这种写法属于什么类型的 pandas 操作？
+4. 比较 MPI-only 和 hybrid 时，为什么要控制相同的 `total_cores`？
+5. 写报告时，为什么不能只说“最快配置”，还要讨论 CUs 或 efficiency？
